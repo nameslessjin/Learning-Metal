@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AE9DE0F2ACA2A7700B03924 /* MapsMaterialsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE0E2ACA2A7700B03924 /* MapsMaterialsApp.swift */; };
+		4AE9DE132ACA2A7900B03924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE122ACA2A7900B03924 /* Assets.xcassets */; };
+		4AE9DE172ACA2A7900B03924 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE162ACA2A7900B03924 /* Preview Assets.xcassets */; };
+		4AE9DE232ACA314800B03924 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE1E2ACA314800B03924 /* GameController.swift */; };
+		4AE9DE242ACA314800B03924 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE1F2ACA314800B03924 /* GameScene.swift */; };
+		4AE9DE252ACA314800B03924 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE202ACA314800B03924 /* Camera.swift */; };
+		4AE9DE262ACA314800B03924 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE212ACA314800B03924 /* SceneLighting.swift */; };
+		4AE9DE272ACA314800B03924 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE222ACA314800B03924 /* Renderer.swift */; };
+		4AE9DE2E2ACA315300B03924 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE292ACA315300B03924 /* Mesh.swift */; };
+		4AE9DE2F2ACA315300B03924 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE2A2ACA315300B03924 /* Model.swift */; };
+		4AE9DE302ACA315300B03924 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE2B2ACA315300B03924 /* Transform.swift */; };
+		4AE9DE312ACA315300B03924 /* Submesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE2C2ACA315300B03924 /* Submesh.swift */; };
+		4AE9DE322ACA315300B03924 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE2D2ACA315300B03924 /* VertexDescriptor.swift */; };
+		4AE9DE362ACA315B00B03924 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE342ACA315B00B03924 /* Movement.swift */; };
+		4AE9DE372ACA315B00B03924 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE352ACA315B00B03924 /* InputController.swift */; };
+		4AE9DE3E2ACA316500B03924 /* gizmo.usd in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE3A2ACA316500B03924 /* gizmo.usd */; };
+		4AE9DE3F2ACA316500B03924 /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE3C2ACA316500B03924 /* sphere.obj */; };
+		4AE9DE402ACA316500B03924 /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE3D2ACA316500B03924 /* sphere.mtl */; };
+		4AE9DE462ACA316F00B03924 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE422ACA316F00B03924 /* Shaders.metal */; };
+		4AE9DE472ACA316F00B03924 /* Lighting.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE452ACA316F00B03924 /* Lighting.metal */; };
+		4AE9DE4C2ACA317600B03924 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE492ACA317600B03924 /* Options.swift */; };
+		4AE9DE4D2ACA317600B03924 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE4A2ACA317600B03924 /* MetalView.swift */; };
+		4AE9DE4E2ACA317600B03924 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE4B2ACA317600B03924 /* ContentView.swift */; };
+		4AE9DE522ACA318300B03924 /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE502ACA318300B03924 /* TextureController.swift */; };
+		4AE9DE582ACA319000B03924 /* DebugLights.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE552ACA319000B03924 /* DebugLights.metal */; };
+		4AE9DE592ACA319000B03924 /* MathLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE562ACA319000B03924 /* MathLib.swift */; };
+		4AE9DE5A2ACA319000B03924 /* DebugLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE572ACA319000B03924 /* DebugLight.swift */; };
+		4AE9DE632ACA3A9D00B03924 /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE5C2ACA3A9D00B03924 /* cube.obj */; };
+		4AE9DE642ACA3A9D00B03924 /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE5D2ACA3A9D00B03924 /* cube.mtl */; };
+		4AE9DE652ACA3A9D00B03924 /* cottage2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE5F2ACA3A9D00B03924 /* cottage2.mtl */; };
+		4AE9DE662ACA3A9D00B03924 /* cottage1.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE602ACA3A9D00B03924 /* cottage1.mtl */; };
+		4AE9DE672ACA3A9D00B03924 /* cottage1.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE612ACA3A9D00B03924 /* cottage1.obj */; };
+		4AE9DE682ACA3A9D00B03924 /* cottage2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE622ACA3A9D00B03924 /* cottage2.obj */; };
+		4AE9DE6A2ACA3E5B00B03924 /* PBR.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DE692ACA3E5B00B03924 /* PBR.metal */; };
+		4AE9DE6C2ACA48DB00B03924 /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE6B2ACA48DB00B03924 /* Textures.xcassets */; };
+		4AE9DE762ACAF2B800B03924 /* helmet.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE6E2ACAF2B800B03924 /* helmet.mtl */; };
+		4AE9DE772ACAF2B800B03924 /* helmet-metallic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE6F2ACAF2B800B03924 /* helmet-metallic.png */; };
+		4AE9DE782ACAF2B800B03924 /* helmet-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE702ACAF2B800B03924 /* helmet-normal.png */; };
+		4AE9DE792ACAF2B800B03924 /* helmet-roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE712ACAF2B800B03924 /* helmet-roughness.png */; };
+		4AE9DE7A2ACAF2B800B03924 /* helmet_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE722ACAF2B800B03924 /* helmet_color.png */; };
+		4AE9DE7B2ACAF2B800B03924 /* helmet_ao.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE732ACAF2B800B03924 /* helmet_ao.png */; };
+		4AE9DE7C2ACAF2B800B03924 /* helmet.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE742ACAF2B800B03924 /* helmet.obj */; };
+		4AE9DE7D2ACAF2B800B03924 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DE752ACAF2B800B03924 /* license.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4AE9DE0B2ACA2A7700B03924 /* MapsMaterials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsMaterials.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE9DE0E2ACA2A7700B03924 /* MapsMaterialsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsMaterialsApp.swift; sourceTree = "<group>"; };
+		4AE9DE122ACA2A7900B03924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AE9DE142ACA2A7900B03924 /* MapsMaterials.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MapsMaterials.entitlements; sourceTree = "<group>"; };
+		4AE9DE162ACA2A7900B03924 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AE9DE1E2ACA314800B03924 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		4AE9DE1F2ACA314800B03924 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4AE9DE202ACA314800B03924 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		4AE9DE212ACA314800B03924 /* SceneLighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
+		4AE9DE222ACA314800B03924 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		4AE9DE292ACA315300B03924 /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		4AE9DE2A2ACA315300B03924 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4AE9DE2B2ACA315300B03924 /* Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		4AE9DE2C2ACA315300B03924 /* Submesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Submesh.swift; sourceTree = "<group>"; };
+		4AE9DE2D2ACA315300B03924 /* VertexDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		4AE9DE342ACA315B00B03924 /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		4AE9DE352ACA315B00B03924 /* InputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		4AE9DE3A2ACA316500B03924 /* gizmo.usd */ = {isa = PBXFileReference; lastKnownFileType = file; path = gizmo.usd; sourceTree = "<group>"; };
+		4AE9DE3C2ACA316500B03924 /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
+		4AE9DE3D2ACA316500B03924 /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
+		4AE9DE422ACA316F00B03924 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		4AE9DE432ACA316F00B03924 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		4AE9DE442ACA316F00B03924 /* Lighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
+		4AE9DE452ACA316F00B03924 /* Lighting.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Lighting.metal; sourceTree = "<group>"; };
+		4AE9DE492ACA317600B03924 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		4AE9DE4A2ACA317600B03924 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		4AE9DE4B2ACA317600B03924 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AE9DE502ACA318300B03924 /* TextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
+		4AE9DE552ACA319000B03924 /* DebugLights.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DebugLights.metal; sourceTree = "<group>"; };
+		4AE9DE562ACA319000B03924 /* MathLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLib.swift; sourceTree = "<group>"; };
+		4AE9DE572ACA319000B03924 /* DebugLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLight.swift; sourceTree = "<group>"; };
+		4AE9DE5C2ACA3A9D00B03924 /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		4AE9DE5D2ACA3A9D00B03924 /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
+		4AE9DE5F2ACA3A9D00B03924 /* cottage2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage2.mtl; sourceTree = "<group>"; };
+		4AE9DE602ACA3A9D00B03924 /* cottage1.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage1.mtl; sourceTree = "<group>"; };
+		4AE9DE612ACA3A9D00B03924 /* cottage1.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage1.obj; sourceTree = "<group>"; };
+		4AE9DE622ACA3A9D00B03924 /* cottage2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cottage2.obj; sourceTree = "<group>"; };
+		4AE9DE692ACA3E5B00B03924 /* PBR.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PBR.metal; sourceTree = "<group>"; };
+		4AE9DE6B2ACA48DB00B03924 /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
+		4AE9DE6E2ACAF2B800B03924 /* helmet.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.mtl; sourceTree = "<group>"; };
+		4AE9DE6F2ACAF2B800B03924 /* helmet-metallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-metallic.png"; sourceTree = "<group>"; };
+		4AE9DE702ACAF2B800B03924 /* helmet-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-normal.png"; sourceTree = "<group>"; };
+		4AE9DE712ACAF2B800B03924 /* helmet-roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helmet-roughness.png"; sourceTree = "<group>"; };
+		4AE9DE722ACAF2B800B03924 /* helmet_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet_color.png; sourceTree = "<group>"; };
+		4AE9DE732ACAF2B800B03924 /* helmet_ao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet_ao.png; sourceTree = "<group>"; };
+		4AE9DE742ACAF2B800B03924 /* helmet.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.obj; sourceTree = "<group>"; };
+		4AE9DE752ACAF2B800B03924 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AE9DE082ACA2A7700B03924 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AE9DE022ACA2A7700B03924 = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE0D2ACA2A7700B03924 /* MapsMaterials */,
+				4AE9DE0C2ACA2A7700B03924 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AE9DE0C2ACA2A7700B03924 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE0B2ACA2A7700B03924 /* MapsMaterials.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AE9DE0D2ACA2A7700B03924 /* MapsMaterials */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE1D2ACA314800B03924 /* Game */,
+				4AE9DE282ACA315300B03924 /* Geometry */,
+				4AE9DE332ACA315B00B03924 /* Input */,
+				4AE9DE382ACA316500B03924 /* Models */,
+				4AE9DE412ACA316F00B03924 /* Shaders */,
+				4AE9DE482ACA317600B03924 /* SwiftUI Views */,
+				4AE9DE4F2ACA318300B03924 /* Textures */,
+				4AE9DE542ACA319000B03924 /* Utility */,
+				4AE9DE0E2ACA2A7700B03924 /* MapsMaterialsApp.swift */,
+				4AE9DE122ACA2A7900B03924 /* Assets.xcassets */,
+				4AE9DE142ACA2A7900B03924 /* MapsMaterials.entitlements */,
+				4AE9DE152ACA2A7900B03924 /* Preview Content */,
+			);
+			path = MapsMaterials;
+			sourceTree = "<group>";
+		};
+		4AE9DE152ACA2A7900B03924 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE162ACA2A7900B03924 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AE9DE1D2ACA314800B03924 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE1E2ACA314800B03924 /* GameController.swift */,
+				4AE9DE1F2ACA314800B03924 /* GameScene.swift */,
+				4AE9DE202ACA314800B03924 /* Camera.swift */,
+				4AE9DE212ACA314800B03924 /* SceneLighting.swift */,
+				4AE9DE222ACA314800B03924 /* Renderer.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		4AE9DE282ACA315300B03924 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE292ACA315300B03924 /* Mesh.swift */,
+				4AE9DE2A2ACA315300B03924 /* Model.swift */,
+				4AE9DE2B2ACA315300B03924 /* Transform.swift */,
+				4AE9DE2C2ACA315300B03924 /* Submesh.swift */,
+				4AE9DE2D2ACA315300B03924 /* VertexDescriptor.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		4AE9DE332ACA315B00B03924 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE342ACA315B00B03924 /* Movement.swift */,
+				4AE9DE352ACA315B00B03924 /* InputController.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		4AE9DE382ACA316500B03924 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE6D2ACAF2B800B03924 /* helmet */,
+				4AE9DE5E2ACA3A9D00B03924 /* Cottage */,
+				4AE9DE5B2ACA3A9D00B03924 /* Cube */,
+				4AE9DE392ACA316500B03924 /* Gizmo */,
+				4AE9DE3B2ACA316500B03924 /* Sphere */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AE9DE392ACA316500B03924 /* Gizmo */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE3A2ACA316500B03924 /* gizmo.usd */,
+			);
+			path = Gizmo;
+			sourceTree = "<group>";
+		};
+		4AE9DE3B2ACA316500B03924 /* Sphere */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE3C2ACA316500B03924 /* sphere.obj */,
+				4AE9DE3D2ACA316500B03924 /* sphere.mtl */,
+			);
+			path = Sphere;
+			sourceTree = "<group>";
+		};
+		4AE9DE412ACA316F00B03924 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE422ACA316F00B03924 /* Shaders.metal */,
+				4AE9DE432ACA316F00B03924 /* Common.h */,
+				4AE9DE442ACA316F00B03924 /* Lighting.h */,
+				4AE9DE452ACA316F00B03924 /* Lighting.metal */,
+				4AE9DE692ACA3E5B00B03924 /* PBR.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		4AE9DE482ACA317600B03924 /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE492ACA317600B03924 /* Options.swift */,
+				4AE9DE4A2ACA317600B03924 /* MetalView.swift */,
+				4AE9DE4B2ACA317600B03924 /* ContentView.swift */,
+			);
+			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		4AE9DE4F2ACA318300B03924 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE502ACA318300B03924 /* TextureController.swift */,
+				4AE9DE6B2ACA48DB00B03924 /* Textures.xcassets */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		4AE9DE542ACA319000B03924 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE552ACA319000B03924 /* DebugLights.metal */,
+				4AE9DE562ACA319000B03924 /* MathLib.swift */,
+				4AE9DE572ACA319000B03924 /* DebugLight.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		4AE9DE5B2ACA3A9D00B03924 /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE5C2ACA3A9D00B03924 /* cube.obj */,
+				4AE9DE5D2ACA3A9D00B03924 /* cube.mtl */,
+			);
+			path = Cube;
+			sourceTree = "<group>";
+		};
+		4AE9DE5E2ACA3A9D00B03924 /* Cottage */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE5F2ACA3A9D00B03924 /* cottage2.mtl */,
+				4AE9DE602ACA3A9D00B03924 /* cottage1.mtl */,
+				4AE9DE612ACA3A9D00B03924 /* cottage1.obj */,
+				4AE9DE622ACA3A9D00B03924 /* cottage2.obj */,
+			);
+			path = Cottage;
+			sourceTree = "<group>";
+		};
+		4AE9DE6D2ACAF2B800B03924 /* helmet */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DE6E2ACAF2B800B03924 /* helmet.mtl */,
+				4AE9DE6F2ACAF2B800B03924 /* helmet-metallic.png */,
+				4AE9DE702ACAF2B800B03924 /* helmet-normal.png */,
+				4AE9DE712ACAF2B800B03924 /* helmet-roughness.png */,
+				4AE9DE722ACAF2B800B03924 /* helmet_color.png */,
+				4AE9DE732ACAF2B800B03924 /* helmet_ao.png */,
+				4AE9DE742ACAF2B800B03924 /* helmet.obj */,
+				4AE9DE752ACAF2B800B03924 /* license.txt */,
+			);
+			path = helmet;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AE9DE0A2ACA2A7700B03924 /* MapsMaterials */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AE9DE1A2ACA2A7900B03924 /* Build configuration list for PBXNativeTarget "MapsMaterials" */;
+			buildPhases = (
+				4AE9DE072ACA2A7700B03924 /* Sources */,
+				4AE9DE082ACA2A7700B03924 /* Frameworks */,
+				4AE9DE092ACA2A7700B03924 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapsMaterials;
+			productName = MapsMaterials;
+			productReference = 4AE9DE0B2ACA2A7700B03924 /* MapsMaterials.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AE9DE032ACA2A7700B03924 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4AE9DE0A2ACA2A7700B03924 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 4AE9DE062ACA2A7700B03924 /* Build configuration list for PBXProject "MapsMaterials" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AE9DE022ACA2A7700B03924;
+			productRefGroup = 4AE9DE0C2ACA2A7700B03924 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AE9DE0A2ACA2A7700B03924 /* MapsMaterials */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AE9DE092ACA2A7700B03924 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE9DE172ACA2A7900B03924 /* Preview Assets.xcassets in Resources */,
+				4AE9DE792ACAF2B800B03924 /* helmet-roughness.png in Resources */,
+				4AE9DE3E2ACA316500B03924 /* gizmo.usd in Resources */,
+				4AE9DE642ACA3A9D00B03924 /* cube.mtl in Resources */,
+				4AE9DE7A2ACAF2B800B03924 /* helmet_color.png in Resources */,
+				4AE9DE772ACAF2B800B03924 /* helmet-metallic.png in Resources */,
+				4AE9DE3F2ACA316500B03924 /* sphere.obj in Resources */,
+				4AE9DE652ACA3A9D00B03924 /* cottage2.mtl in Resources */,
+				4AE9DE762ACAF2B800B03924 /* helmet.mtl in Resources */,
+				4AE9DE672ACA3A9D00B03924 /* cottage1.obj in Resources */,
+				4AE9DE7C2ACAF2B800B03924 /* helmet.obj in Resources */,
+				4AE9DE782ACAF2B800B03924 /* helmet-normal.png in Resources */,
+				4AE9DE132ACA2A7900B03924 /* Assets.xcassets in Resources */,
+				4AE9DE402ACA316500B03924 /* sphere.mtl in Resources */,
+				4AE9DE632ACA3A9D00B03924 /* cube.obj in Resources */,
+				4AE9DE7B2ACAF2B800B03924 /* helmet_ao.png in Resources */,
+				4AE9DE7D2ACAF2B800B03924 /* license.txt in Resources */,
+				4AE9DE6C2ACA48DB00B03924 /* Textures.xcassets in Resources */,
+				4AE9DE682ACA3A9D00B03924 /* cottage2.obj in Resources */,
+				4AE9DE662ACA3A9D00B03924 /* cottage1.mtl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AE9DE072ACA2A7700B03924 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE9DE372ACA315B00B03924 /* InputController.swift in Sources */,
+				4AE9DE262ACA314800B03924 /* SceneLighting.swift in Sources */,
+				4AE9DE6A2ACA3E5B00B03924 /* PBR.metal in Sources */,
+				4AE9DE522ACA318300B03924 /* TextureController.swift in Sources */,
+				4AE9DE2E2ACA315300B03924 /* Mesh.swift in Sources */,
+				4AE9DE322ACA315300B03924 /* VertexDescriptor.swift in Sources */,
+				4AE9DE4C2ACA317600B03924 /* Options.swift in Sources */,
+				4AE9DE252ACA314800B03924 /* Camera.swift in Sources */,
+				4AE9DE242ACA314800B03924 /* GameScene.swift in Sources */,
+				4AE9DE472ACA316F00B03924 /* Lighting.metal in Sources */,
+				4AE9DE0F2ACA2A7700B03924 /* MapsMaterialsApp.swift in Sources */,
+				4AE9DE272ACA314800B03924 /* Renderer.swift in Sources */,
+				4AE9DE462ACA316F00B03924 /* Shaders.metal in Sources */,
+				4AE9DE582ACA319000B03924 /* DebugLights.metal in Sources */,
+				4AE9DE232ACA314800B03924 /* GameController.swift in Sources */,
+				4AE9DE362ACA315B00B03924 /* Movement.swift in Sources */,
+				4AE9DE312ACA315300B03924 /* Submesh.swift in Sources */,
+				4AE9DE5A2ACA319000B03924 /* DebugLight.swift in Sources */,
+				4AE9DE592ACA319000B03924 /* MathLib.swift in Sources */,
+				4AE9DE4E2ACA317600B03924 /* ContentView.swift in Sources */,
+				4AE9DE4D2ACA317600B03924 /* MetalView.swift in Sources */,
+				4AE9DE302ACA315300B03924 /* Transform.swift in Sources */,
+				4AE9DE2F2ACA315300B03924 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4AE9DE182ACA2A7900B03924 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = MapsMaterials/Shaders/Common.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AE9DE192ACA2A7900B03924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = MapsMaterials/Shaders/Common.h;
+			};
+			name = Release;
+		};
+		4AE9DE1B2ACA2A7900B03924 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MapsMaterials/MapsMaterials.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MapsMaterials/Preview Content\"";
+				DEVELOPMENT_TEAM = TK8SRD6J57;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nothing.MapsMaterials;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AE9DE1C2ACA2A7900B03924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MapsMaterials/MapsMaterials.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MapsMaterials/Preview Content\"";
+				DEVELOPMENT_TEAM = TK8SRD6J57;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nothing.MapsMaterials;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AE9DE062ACA2A7700B03924 /* Build configuration list for PBXProject "MapsMaterials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AE9DE182ACA2A7900B03924 /* Debug */,
+				4AE9DE192ACA2A7900B03924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AE9DE1A2ACA2A7900B03924 /* Build configuration list for PBXNativeTarget "MapsMaterials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AE9DE1B2ACA2A7900B03924 /* Debug */,
+				4AE9DE1C2ACA2A7900B03924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AE9DE032ACA2A7700B03924 /* Project object */;
+}
