@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AE9DCDC2AC6F55C00B03924 /* TexturesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCDB2AC6F55C00B03924 /* TexturesApp.swift */; };
+		4AE9DCDE2AC6F55C00B03924 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCDD2AC6F55C00B03924 /* ContentView.swift */; };
+		4AE9DCE02AC6F55D00B03924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DCDF2AC6F55D00B03924 /* Assets.xcassets */; };
+		4AE9DCE42AC6F55D00B03924 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DCE32AC6F55D00B03924 /* Preview Assets.xcassets */; };
+		4AE9DCEF2AC6F59900B03924 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCEE2AC6F59900B03924 /* Mesh.swift */; };
+		4AE9DCF12AC6F5A200B03924 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCF02AC6F5A200B03924 /* Model.swift */; };
+		4AE9DCF32AC6F5AB00B03924 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCF22AC6F5AB00B03924 /* Renderer.swift */; };
+		4AE9DCF52AC6F5B200B03924 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCF42AC6F5B200B03924 /* Shaders.metal */; };
+		4AE9DCF72AC6F5BD00B03924 /* Submesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCF62AC6F5BD00B03924 /* Submesh.swift */; };
+		4AE9DCF92AC6F5CA00B03924 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCF82AC6F5CA00B03924 /* Transform.swift */; };
+		4AE9DCFB2AC6F5D300B03924 /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCFA2AC6F5D300B03924 /* VertexDescriptor.swift */; };
+		4AE9DCFD2AC6F5E300B03924 /* MathLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCFC2AC6F5E300B03924 /* MathLib.swift */; };
+		4AE9DCFF2AC6F5F900B03924 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DCFE2AC6F5F900B03924 /* MetalView.swift */; };
+		4AE9DD012AC6F60A00B03924 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DD002AC6F60A00B03924 /* Options.swift */; };
+		4AE9DD0D2AC7067B00B03924 /* plane.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD032AC7067B00B03924 /* plane.obj */; };
+		4AE9DD0E2AC7067B00B03924 /* plane.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD042AC7067B00B03924 /* plane.mtl */; };
+		4AE9DD0F2AC7067B00B03924 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD052AC7067B00B03924 /* ground.png */; };
+		4AE9DD102AC7067B00B03924 /* lowpoly-house-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD072AC7067B00B03924 /* lowpoly-house-color.png */; };
+		4AE9DD112AC7067B00B03924 /* lowpoly-house.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD082AC7067B00B03924 /* lowpoly-house.obj */; };
+		4AE9DD122AC7067B00B03924 /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD092AC7067B00B03924 /* lowpoly-house.mtl */; };
+		4AE9DD132AC7067B00B03924 /* barn-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD0B2AC7067B00B03924 /* barn-ground.png */; };
+		4AE9DD142AC7067B00B03924 /* lowpoly-barn-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD0C2AC7067B00B03924 /* lowpoly-barn-color.png */; };
+		4AE9DD162AC70ECB00B03924 /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9DD152AC70ECB00B03924 /* TextureController.swift */; };
+		4AE9DD1A2AC77F8E00B03924 /* Texture.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9DD192AC77F8E00B03924 /* Texture.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4AE9DCD82AC6F55C00B03924 /* Textures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Textures.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE9DCDB2AC6F55C00B03924 /* TexturesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexturesApp.swift; sourceTree = "<group>"; };
+		4AE9DCDD2AC6F55C00B03924 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AE9DCDF2AC6F55D00B03924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AE9DCE12AC6F55D00B03924 /* Textures.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Textures.entitlements; sourceTree = "<group>"; };
+		4AE9DCE32AC6F55D00B03924 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AE9DCED2AC6F58E00B03924 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		4AE9DCEE2AC6F59900B03924 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		4AE9DCF02AC6F5A200B03924 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4AE9DCF22AC6F5AB00B03924 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		4AE9DCF42AC6F5B200B03924 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		4AE9DCF62AC6F5BD00B03924 /* Submesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submesh.swift; sourceTree = "<group>"; };
+		4AE9DCF82AC6F5CA00B03924 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		4AE9DCFA2AC6F5D300B03924 /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
+		4AE9DCFC2AC6F5E300B03924 /* MathLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLib.swift; sourceTree = "<group>"; };
+		4AE9DCFE2AC6F5F900B03924 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		4AE9DD002AC6F60A00B03924 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		4AE9DD032AC7067B00B03924 /* plane.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plane.obj; sourceTree = "<group>"; };
+		4AE9DD042AC7067B00B03924 /* plane.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plane.mtl; sourceTree = "<group>"; };
+		4AE9DD052AC7067B00B03924 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		4AE9DD072AC7067B00B03924 /* lowpoly-house-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lowpoly-house-color.png"; sourceTree = "<group>"; };
+		4AE9DD082AC7067B00B03924 /* lowpoly-house.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.obj"; sourceTree = "<group>"; };
+		4AE9DD092AC7067B00B03924 /* lowpoly-house.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.mtl"; sourceTree = "<group>"; };
+		4AE9DD0B2AC7067B00B03924 /* barn-ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barn-ground.png"; sourceTree = "<group>"; };
+		4AE9DD0C2AC7067B00B03924 /* lowpoly-barn-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lowpoly-barn-color.png"; sourceTree = "<group>"; };
+		4AE9DD152AC70ECB00B03924 /* TextureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
+		4AE9DD192AC77F8E00B03924 /* Texture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Texture.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AE9DCD52AC6F55C00B03924 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AE9DCCF2AC6F55C00B03924 = {
+			isa = PBXGroup;
+			children = (
+				4AE9DCDA2AC6F55C00B03924 /* Textures */,
+				4AE9DCD92AC6F55C00B03924 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AE9DCD92AC6F55C00B03924 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DCD82AC6F55C00B03924 /* Textures.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AE9DCDA2AC6F55C00B03924 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DCEC2AC6F57B00B03924 /* Utility */,
+				4AE9DCEB2AC6F57000B03924 /* SwiftUI Views */,
+				4AE9DCEA2AC6F56300B03924 /* Models */,
+				4AE9DCDB2AC6F55C00B03924 /* TexturesApp.swift */,
+				4AE9DCDF2AC6F55D00B03924 /* Assets.xcassets */,
+				4AE9DCE12AC6F55D00B03924 /* Textures.entitlements */,
+				4AE9DCE22AC6F55D00B03924 /* Preview Content */,
+				4AE9DCED2AC6F58E00B03924 /* Common.h */,
+				4AE9DCEE2AC6F59900B03924 /* Mesh.swift */,
+				4AE9DCF02AC6F5A200B03924 /* Model.swift */,
+				4AE9DCF22AC6F5AB00B03924 /* Renderer.swift */,
+				4AE9DCF42AC6F5B200B03924 /* Shaders.metal */,
+				4AE9DCF62AC6F5BD00B03924 /* Submesh.swift */,
+				4AE9DCF82AC6F5CA00B03924 /* Transform.swift */,
+				4AE9DCFA2AC6F5D300B03924 /* VertexDescriptor.swift */,
+				4AE9DD152AC70ECB00B03924 /* TextureController.swift */,
+				4AE9DD192AC77F8E00B03924 /* Texture.xcassets */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		4AE9DCE22AC6F55D00B03924 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DCE32AC6F55D00B03924 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AE9DCEA2AC6F56300B03924 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DD022AC7067B00B03924 /* Ground */,
+				4AE9DD062AC7067B00B03924 /* LowPolyHouse */,
+				4AE9DD0A2AC7067B00B03924 /* Textures */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AE9DCEB2AC6F57000B03924 /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DCFE2AC6F5F900B03924 /* MetalView.swift */,
+				4AE9DD002AC6F60A00B03924 /* Options.swift */,
+				4AE9DCDD2AC6F55C00B03924 /* ContentView.swift */,
+			);
+			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		4AE9DCEC2AC6F57B00B03924 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DCFC2AC6F5E300B03924 /* MathLib.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		4AE9DD022AC7067B00B03924 /* Ground */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DD032AC7067B00B03924 /* plane.obj */,
+				4AE9DD042AC7067B00B03924 /* plane.mtl */,
+				4AE9DD052AC7067B00B03924 /* ground.png */,
+			);
+			path = Ground;
+			sourceTree = "<group>";
+		};
+		4AE9DD062AC7067B00B03924 /* LowPolyHouse */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DD072AC7067B00B03924 /* lowpoly-house-color.png */,
+				4AE9DD082AC7067B00B03924 /* lowpoly-house.obj */,
+				4AE9DD092AC7067B00B03924 /* lowpoly-house.mtl */,
+			);
+			path = LowPolyHouse;
+			sourceTree = "<group>";
+		};
+		4AE9DD0A2AC7067B00B03924 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9DD0B2AC7067B00B03924 /* barn-ground.png */,
+				4AE9DD0C2AC7067B00B03924 /* lowpoly-barn-color.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AE9DCD72AC6F55C00B03924 /* Textures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AE9DCE72AC6F55D00B03924 /* Build configuration list for PBXNativeTarget "Textures" */;
+			buildPhases = (
+				4AE9DCD42AC6F55C00B03924 /* Sources */,
+				4AE9DCD52AC6F55C00B03924 /* Frameworks */,
+				4AE9DCD62AC6F55C00B03924 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Textures;
+			productName = Textures;
+			productReference = 4AE9DCD82AC6F55C00B03924 /* Textures.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AE9DCD02AC6F55C00B03924 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4AE9DCD72AC6F55C00B03924 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 4AE9DCD32AC6F55C00B03924 /* Build configuration list for PBXProject "Textures" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AE9DCCF2AC6F55C00B03924;
+			productRefGroup = 4AE9DCD92AC6F55C00B03924 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AE9DCD72AC6F55C00B03924 /* Textures */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AE9DCD62AC6F55C00B03924 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE9DD0E2AC7067B00B03924 /* plane.mtl in Resources */,
+				4AE9DCE42AC6F55D00B03924 /* Preview Assets.xcassets in Resources */,
+				4AE9DCE02AC6F55D00B03924 /* Assets.xcassets in Resources */,
+				4AE9DD122AC7067B00B03924 /* lowpoly-house.mtl in Resources */,
+				4AE9DD102AC7067B00B03924 /* lowpoly-house-color.png in Resources */,
+				4AE9DD142AC7067B00B03924 /* lowpoly-barn-color.png in Resources */,
+				4AE9DD1A2AC77F8E00B03924 /* Texture.xcassets in Resources */,
+				4AE9DD112AC7067B00B03924 /* lowpoly-house.obj in Resources */,
+				4AE9DD0D2AC7067B00B03924 /* plane.obj in Resources */,
+				4AE9DD132AC7067B00B03924 /* barn-ground.png in Resources */,
+				4AE9DD0F2AC7067B00B03924 /* ground.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AE9DCD42AC6F55C00B03924 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE9DCF52AC6F5B200B03924 /* Shaders.metal in Sources */,
+				4AE9DCEF2AC6F59900B03924 /* Mesh.swift in Sources */,
+				4AE9DCDE2AC6F55C00B03924 /* ContentView.swift in Sources */,
+				4AE9DCFB2AC6F5D300B03924 /* VertexDescriptor.swift in Sources */,
+				4AE9DD012AC6F60A00B03924 /* Options.swift in Sources */,
+				4AE9DCDC2AC6F55C00B03924 /* TexturesApp.swift in Sources */,
+				4AE9DCF72AC6F5BD00B03924 /* Submesh.swift in Sources */,
+				4AE9DCFF2AC6F5F900B03924 /* MetalView.swift in Sources */,
+				4AE9DCF32AC6F5AB00B03924 /* Renderer.swift in Sources */,
+				4AE9DCFD2AC6F5E300B03924 /* MathLib.swift in Sources */,
+				4AE9DCF92AC6F5CA00B03924 /* Transform.swift in Sources */,
+				4AE9DD162AC70ECB00B03924 /* TextureController.swift in Sources */,
+				4AE9DCF12AC6F5A200B03924 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4AE9DCE52AC6F55D00B03924 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = Textures/Common.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AE9DCE62AC6F55D00B03924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = Textures/Common.h;
+			};
+			name = Release;
+		};
+		4AE9DCE82AC6F55D00B03924 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Textures/Textures.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Textures/Preview Content\"";
+				DEVELOPMENT_TEAM = TK8SRD6J57;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nothing.Textures;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AE9DCE92AC6F55D00B03924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Textures/Textures.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Textures/Preview Content\"";
+				DEVELOPMENT_TEAM = TK8SRD6J57;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nothing.Textures;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AE9DCD32AC6F55C00B03924 /* Build configuration list for PBXProject "Textures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AE9DCE52AC6F55D00B03924 /* Debug */,
+				4AE9DCE62AC6F55D00B03924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AE9DCE72AC6F55D00B03924 /* Build configuration list for PBXNativeTarget "Textures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AE9DCE82AC6F55D00B03924 /* Debug */,
+				4AE9DCE92AC6F55D00B03924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AE9DCD02AC6F55C00B03924 /* Project object */;
+}
