@@ -39,21 +39,21 @@ class InputController {
                 }
         }
         
-        #if os(macOS)
-        // interrupt the view's responder chain by handling any key pressed and telling the system that it doesn't need
-        // to take action when a key is pressed
-        NSEvent.addLocalMonitorForEvents(matching: [.keyUp, .keyDown]) { _ in nil}
-        #endif
         
         center.addObserver(forName: .GCMouseDidConnect, object: nil, queue: nil) {
             notification in
                 let mouse = notification.object as? GCMouse
                 mouse?.mouseInput?.leftButton.pressedChangedHandler = { _, _, pressed in self.leftMouseDown = pressed} // record left button
-                mouse?.mouseInput?.mouseMovedHandler = { _, deltaX, deltaY in self.mouseDelta = Point(x: deltaX, y: deltaY)} // track mouse movement
                 mouse?.mouseInput?.scroll.valueChangedHandler = { _, xValue, yValue in  // record scroll wheel movement
                     self.mouseScroll.x = xValue
                     self.mouseScroll.y = yValue
                 }
         }
+        
+#if os(macOS)
+// interrupt the view's responder chain by handling any key pressed and telling the system that it doesn't need
+// to take action when a key is pressed
+NSEvent.addLocalMonitorForEvents(matching: [.keyUp, .keyDown]) { _ in nil}
+#endif
     }
 }
