@@ -17,8 +17,8 @@ https://github.com/nameslessjin/Learning-Metal/assets/42518630/d0db0063-4da0-469
 
 
 
+https://github.com/nameslessjin/Learning-Metal/assets/42518630/8d629fd7-065f-4814-9c96-743f32f0fb9f
 
-Uploading Screen Recording 2023-10-14 at 5.16.04 AM.mov…
 
 
 
