@@ -14,6 +14,7 @@ struct ContentView: View {
             ZStack {
                 MetalView(options: options)
                     .border(Color.black, width: 2)
+//                    .frame(width: 800, height: 400)
             }
         }
         .padding()

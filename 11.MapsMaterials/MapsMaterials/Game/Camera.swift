@@ -5,6 +5,7 @@ protocol Camera: Transformable {
     var viewMatrix: float4x4 {get}
     mutating func update(size:CGSize)
     mutating func update(deltaTime: Float)
+    mutating func update(deltaX: Float, deltaY: Float)
 }
 
 struct FPCamera: Camera {
@@ -24,6 +25,8 @@ struct FPCamera: Camera {
         aspect = Float(size.width / size.height)
     }
     
+    mutating func update(deltaX: Float, deltaY: Float) {}
+    
     var viewMatrix: float4x4 {
         (float4x4(translation: position) * float4x4(rotation: rotation)).inverse
     }
@@ -32,6 +35,7 @@ struct FPCamera: Camera {
         let transform = updateInput(deltaTime: deltaTime)
         rotation += transform.rotation
         position += transform.position
+        print("deltaTIme: \(deltaTime)")
     }
 }
 
@@ -58,6 +62,13 @@ struct ArcballCamera: Camera {
     
     mutating func update(size: CGSize) {
         aspect = Float(size.width / size.height)
+    }
+    
+    mutating func update(deltaX: Float, deltaY: Float) {
+        let sensitivity = Settings.mousePanSensitivity
+        rotation.x += deltaY * sensitivity
+        rotation.y += deltaX * sensitivity
+        rotation.x = max(-.pi / 2, min(rotation.x, .pi / 2))
     }
     
     var viewMatrix: float4x4 {
@@ -126,6 +137,8 @@ struct OrthographicCamera: Camera, Movement {
         aspect = size.width / size.height
     }
     
+    mutating func update(deltaX: Float, deltaY: Float) {}
+    
     mutating func update(deltaTime: Float) {
         let transform = updateInput(deltaTime: deltaTime)
         position += transform.position
@@ -154,6 +167,8 @@ struct PlayerCamera: Camera {
     mutating func update(size: CGSize) {
         aspect = Float(size.width / size.height)
     }
+    
+    mutating func update(deltaX: Float, deltaY: Float) {}
     
     var viewMatrix: float4x4 {
         let rotateMatrix = float4x4(rotationYXZ: [-rotation.x, rotation.y, 0])

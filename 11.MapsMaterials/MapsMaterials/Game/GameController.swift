@@ -30,6 +30,7 @@ extension GameController: MTKViewDelegate {
         let deltaTime = (currentTime - lastTime)
         lastTime = currentTime
         scene.update(deltaTime: Float(deltaTime))
+        scene.camera.update(deltaX: 1, deltaY: 0)
         renderer.draw(scene: scene, in: view)
     }
 }

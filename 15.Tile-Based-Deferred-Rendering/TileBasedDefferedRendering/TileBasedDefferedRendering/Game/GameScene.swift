@@ -52,7 +52,7 @@ struct GameScene {
     
     init() {
         
-        models = [ground, treefir1, treefir2, treefir3, train]
+        models = [ground, treefir1, treefir2, treefir3, train, sun]
         treefir1.position = [-1, 0, 2.5]
         treefir2.position = [-3, 0, -2]
         treefir3.position = [ 1.5, 0, -0.5]
@@ -131,10 +131,10 @@ struct GameScene {
         if isPaused {return}
         
         // rotate sun light around the scene
-//        let rotationMatrix = float4x4(rotation: [0, deltaTime * 0.4, 0])
-//        let position = lighting.lights[0].position
-//        lighting.lights[0].position = (rotationMatrix * float4(position.x, position.y, position.z, 1)).xyz
-//        sun.position = lighting.lights[0].position
+        let rotationMatrix = float4x4(rotation: [0, deltaTime * 0.4, 0])
+        let position = lighting.lights[0].position
+        lighting.lights[0].position = (rotationMatrix * float4(position.x, position.y, position.z, 1)).xyz
+        sun.position = lighting.lights[0].position
         
         calculateGizmo()
     }

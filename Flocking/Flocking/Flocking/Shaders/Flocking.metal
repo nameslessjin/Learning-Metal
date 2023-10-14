@@ -144,55 +144,78 @@ kernel void boids(
                   uint id [[thread_position_in_grid]]
                   )
 {
+    
     Boid predator = boids[0]; // label the first boid as the predator
-    Boid boid;
-    if (id != 0) boid = boids[id];
+    uint2 location;
+    half4 color;
+    
+    if (id != 0 ){ // nonpredator
+        Boid boid;
+        boid = boids[id];
+        
+        float2 position = boid.position;
+        float2 velocity = boid.velocity;
+        
+        // check collision with the edges of the screen and update velocity
+        if (position.x < 0 || position.x > output.get_width()) {
+            velocity.x *= -1;
+        }
+        if (position.y < 0 || position.y > output.get_height()) {
+            velocity.y *= -1;
+        }
+        
+        // determine the cohesion vector for the current boid and then attenuate its force
+        float2 cohesionVector = cohesion(id, boids, particleCount) * attenuation;
+        float2 separationVector = separation(id, boids, particleCount) * attenuation;
+        float2 alignmentVector = alignment(id, boids, particleCount) * attenuation;
+        float2 escapingVector = escaping(predator, boid) * attenuation;
+        float2 dampeningVector = dampening(boid) * attenuation;
+        
+        velocity += cohesionVector * cohesionWeight
+                + separationVector * separationWeight
+                + alignmentVector * alignmentWeight
+                + escapingVector * escapingWeight
+                + dampeningVector * dampeningWeight;
+        
+        position += velocity;
+        boid.position = position;
+        boid.velocity = velocity;
+        boids[id] = boid;
+        
+        location = uint2(position);
+        color = half4(1.0);
+        
+    } else { // predator
+        
+        // check collision with the edges of the screen and update velocity for predator
+        if (predator.position.x < 0 || predator.position.x > output.get_width()) {
+            predator.velocity.x *= -1;
+        }
+        if (predator.position.y < 0 || predator.position.y > output.get_height()) {
+            predator.velocity.y *= -1;
+        }
 
-    float2 position = boid.position;
-    float2 velocity = boid.velocity;
-    
-    // check collision with the edges of the screen and update velocity
-    if (position.x < 0 || position.x > output.get_width()) {
-        velocity.x *= -1;
-    }
-    if (position.y < 0 || position.y > output.get_height()) {
-        velocity.y *= -1;
-    }
-    
-    // determine the cohesion vector for the current boid and then attenuate its force
-    float2 cohesionVector = cohesion(id, boids, particleCount) * attenuation;
-    float2 separationVector = separation(id, boids, particleCount) * attenuation;
-    float2 alignmentVector = alignment(id, boids, particleCount) * attenuation;
-    float2 escapingVector = escaping(predator, boid) * attenuation;
-    float2 dampeningVector = dampening(boid) * attenuation;
-    
-    velocity += cohesionVector * cohesionWeight 
-            + separationVector * separationWeight
-            + alignmentVector * alignmentWeight
-            + escapingVector * escapingWeight
-            + dampeningVector * dampeningWeight;
-    
-    position += velocity;
-    boid.position = position;
-    boid.velocity = velocity;
-    boids[id] = boid;
-    
-    // check collision with the edges of the screen and update velocity for predator
-    if (predator.position.x < 0 || predator.position.x > output.get_width()) {
-        predator.velocity.x *= -1;
-    }
-    if (predator.position.y < 0 || predator.position.y > output.get_height()) {
-        predator.velocity.y *= -1;
-    }
-    predator.position += predator.velocity / 2;
-    boids[0] = predator;
-    
-    uint2 location = uint2(position);
-    half4 color = half4(1.0);
-    if (id == 0) { // predator color and location
+        float2 tempPos = float2(0);
+        for (uint i = 1; i < particleCount; ++i) {
+            tempPos += boids[i].position;
+        }
+        tempPos /= (particleCount - 1);
+        
+        tempPos = (tempPos - predator.position) / average;
+        
+        float2 dampeningVector = dampening(predator) * attenuation;
+        predator.velocity = tempPos * cohesionWeight + dampeningVector * dampeningVector * dampeningWeight;
+        predator.position += predator.velocity / 2;
+        boids[0] = predator;
+        
         color = half4(1.0, 0.0, 0.0, 1.0);
         location = uint2(predator.position);
+        
     }
+
+    
+    
+    
     output.write(color, location);
     
     // modifies the neighboring pixels around all sides of the boid which
