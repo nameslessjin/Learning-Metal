@@ -21,7 +21,10 @@ https://github.com/nameslessjin/Learning-Metal/assets/42518630/d0db0063-4da0-469
 - [x] Compute Shader (compute each particle parallelly)
 - [x] Particle System
 
-https://github.com/nameslessjin/Learning-Metal/assets/42518630/8d629fd7-065f-4814-9c96-743f32f0fb9f
+
+
+https://github.com/nameslessjin/Learning-Metal/assets/42518630/48e55d91-c370-4f8b-ba9f-1e26a6e1e66d
+
 
 
 ## Features
