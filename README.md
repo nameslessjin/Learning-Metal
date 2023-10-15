@@ -18,14 +18,14 @@ https://github.com/nameslessjin/Learning-Metal/assets/42518630/d0db0063-4da0-469
 
 
 ## Features
-- [x] Compute Shader
+- [x] Compute Shader (compute each particle parallelly)
 - [x] Particle System
 
 https://github.com/nameslessjin/Learning-Metal/assets/42518630/8d629fd7-065f-4814-9c96-743f32f0fb9f
 
 
 ## Features
-- [x] Compute Shader
+- [x] Compute Shader (compute each boid parallelly)
 - [x] Flocking System
 
 https://github.com/nameslessjin/Learning-Metal/assets/42518630/a466f2d8-e108-4c15-81be-fa36c8469a70
