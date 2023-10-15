@@ -12,7 +12,7 @@ https://github.com/nameslessjin/Learning-Metal/assets/42518630/1f30b7a4-aa62-450
 
 ## Features
 - [x] Forward Rendering, Deferred Rendering, Tile-Based Deferred Rendering
-- [x] Shadow Map
+- [x] Shadow Mapping
 
 https://github.com/nameslessjin/Learning-Metal/assets/42518630/d0db0063-4da0-469b-addb-912ccba171cd
 
