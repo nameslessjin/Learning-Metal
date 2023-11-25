@@ -108,11 +108,13 @@ fragment float4 fragment_main(
     if (in.height < -0.6) {
         color = grass;
     } else if (in.height < -0.4) {
+        // fix grass and cliff color for better transition
         float value = (in.height + 0.6) / 0.2;
         color = mix(grass, cliff, value);
     } else if (in.height < -0.2) {
         color = cliff;
     } else {
+        // set the slope requirement for snow
         if (in.slope < 0.15) {
             color = snow;
         } else {
