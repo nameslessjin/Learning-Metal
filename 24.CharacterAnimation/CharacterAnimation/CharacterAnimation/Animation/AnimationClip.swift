@@ -32,37 +32,26 @@
 
 import MetalKit
 
-// swiftlint:disable force_unwrapping
-// swiftlint:disable force_cast
+class AnimationClip {
+  let name: String
+  var jointAnimation: [String: Animation?] = [:]
+  var duration: Float = 0
+  var speed: Float = 1
 
-struct Mesh {
-  let vertexBuffers: [MTLBuffer]
-  let submeshes: [Submesh]
-    
-    var transform: TransformComponent?
-    
-}
-
-extension Mesh {
-  init(mdlMesh: MDLMesh, mtkMesh: MTKMesh) {
-    var vertexBuffers: [MTLBuffer] = []
-    for mtkMeshBuffer in mtkMesh.vertexBuffers {
-      vertexBuffers.append(mtkMeshBuffer.buffer)
-    }
-    self.vertexBuffers = vertexBuffers
-    submeshes = zip(mdlMesh.submeshes!, mtkMesh.submeshes).map { mesh in
-      Submesh(mdlSubmesh: mesh.0 as! MDLSubmesh, mtkSubmesh: mesh.1)
-    }
+  init(name: String) {
+    self.name = name
   }
     
-    init(mdlMesh: MDLMesh, mtkMesh: MTKMesh, startTime: TimeInterval, endTime: TimeInterval) {
-        self.init(mdlMesh: mdlMesh, mtkMesh:  mtkMesh)
+    func getPose(at time: Float, jointPath: String) -> float4x4? {
+        guard let jointAnimation = jointAnimation[jointPath],
+              let jointAnimation = jointAnimation
+        else { return nil }
         
-        // set up the transform component with animation
-        if let mdlMeshTransform = mdlMesh.transform {
-            transform = TransformComponent(transform: mdlMeshTransform, object: mdlMesh, startTime: startTime, endTime: endTime)
-        } else {
-            transform = nil
-        }
+        //retrieve the interpolated transformation for a given joint at a given time
+        let rotation = jointAnimation.getRotation(at: time) ?? simd_quatf()
+        let translation = jointAnimation.getTranslation(at: time) ?? float3(repeating: 0)
+        let scale = jointAnimation.getScale(at: time) ?? float3(repeating: 0)
+        let pose = float4x4(translation: translation) * float4x4(rotation) * float4x4(scaling: scale)
+        return pose
     }
 }

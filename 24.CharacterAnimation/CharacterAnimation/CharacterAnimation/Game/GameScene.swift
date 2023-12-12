@@ -32,37 +32,54 @@
 
 import MetalKit
 
-// swiftlint:disable force_unwrapping
-// swiftlint:disable force_cast
+struct GameScene {
+  lazy var skeleton: Model = {
+    Model(name: "skeletonWave.usda")
+  }()
+  lazy var ground: Model = {
+    let model = Model(name: "large_plane.obj")
+    model.tiling = 12
+    return model
+  }()
 
-struct Mesh {
-  let vertexBuffers: [MTLBuffer]
-  let submeshes: [Submesh]
-    
-    var transform: TransformComponent?
-    
-}
-
-extension Mesh {
-  init(mdlMesh: MDLMesh, mtkMesh: MTKMesh) {
-    var vertexBuffers: [MTLBuffer] = []
-    for mtkMeshBuffer in mtkMesh.vertexBuffers {
-      vertexBuffers.append(mtkMeshBuffer.buffer)
-    }
-    self.vertexBuffers = vertexBuffers
-    submeshes = zip(mdlMesh.submeshes!, mtkMesh.submeshes).map { mesh in
-      Submesh(mdlSubmesh: mesh.0 as! MDLSubmesh, mtkSubmesh: mesh.1)
-    }
+  var models: [Model] = []
+  var camera = ArcballCamera()
+  var defaultDistance: Float = 2
+  var defaultView: Transform {
+    Transform(
+      position: [0.03, 1.44, -1.95],
+      rotation: [-0.22, 0, 0])
   }
-    
-    init(mdlMesh: MDLMesh, mtkMesh: MTKMesh, startTime: TimeInterval, endTime: TimeInterval) {
-        self.init(mdlMesh: mdlMesh, mtkMesh:  mtkMesh)
-        
-        // set up the transform component with animation
-        if let mdlMeshTransform = mdlMesh.transform {
-            transform = TransformComponent(transform: mdlMeshTransform, object: mdlMesh, startTime: startTime, endTime: endTime)
-        } else {
-            transform = nil
-        }
+  var lighting = SceneLighting()
+
+  init() {
+    camera.target = [0, 1, 0]
+    camera.distance = defaultDistance
+    camera.transform = defaultView
+    models = [ground, skeleton]
+    skeleton.rotation.y = .pi
+  }
+
+  mutating func update(size: CGSize) {
+    camera.update(size: size)
+  }
+
+
+  mutating func update(deltaTime: Float) {
+    for model in models {
+      model.update(deltaTime: deltaTime)
     }
+    let input = InputController.shared
+    if input.keysPressed.contains(.one) {
+      camera.transform = Transform()
+      camera.distance = defaultDistance
+      input.keysPressed.remove(.one)
+    }
+    if input.keysPressed.contains(.two) {
+      camera.transform = defaultView
+      camera.distance = defaultDistance
+      input.keysPressed.remove(.two)
+    }
+    camera.update(deltaTime: deltaTime)
+  }
 }

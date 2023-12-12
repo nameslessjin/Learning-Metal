@@ -30,39 +30,44 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import MetalKit
+#include <metal_stdlib>
+using namespace metal;
 
-// swiftlint:disable force_unwrapping
-// swiftlint:disable force_cast
+#import "../Shaders/Common.h"
 
-struct Mesh {
-  let vertexBuffers: [MTLBuffer]
-  let submeshes: [Submesh]
-    
-    var transform: TransformComponent?
-    
+struct VertexOut {
+  float4 position [[position]];
+  float point_size [[point_size]];
+};
+
+vertex VertexOut vertex_debug(
+  constant float3 *vertices [[buffer(0)]],
+  constant Uniforms &uniforms [[buffer(UniformsBuffer)]],
+  uint id [[vertex_id]])
+{
+  matrix_float4x4 mvp = uniforms.projectionMatrix
+    * uniforms.viewMatrix * uniforms.modelMatrix;
+  VertexOut out {
+    .position = mvp * float4(vertices[id], 1),
+    .point_size = 25.0
+  };
+  return out;
 }
 
-extension Mesh {
-  init(mdlMesh: MDLMesh, mtkMesh: MTKMesh) {
-    var vertexBuffers: [MTLBuffer] = []
-    for mtkMeshBuffer in mtkMesh.vertexBuffers {
-      vertexBuffers.append(mtkMeshBuffer.buffer)
-    }
-    self.vertexBuffers = vertexBuffers
-    submeshes = zip(mdlMesh.submeshes!, mtkMesh.submeshes).map { mesh in
-      Submesh(mdlSubmesh: mesh.0 as! MDLSubmesh, mtkSubmesh: mesh.1)
-    }
+fragment float4 fragment_debug_point(
+  float2 point [[point_coord]],
+  constant float3 &color [[buffer(1)]])
+{
+  float d = distance(point, float2(0.5, 0.5));
+  if (d > 0.5) {
+    discard_fragment();
   }
-    
-    init(mdlMesh: MDLMesh, mtkMesh: MTKMesh, startTime: TimeInterval, endTime: TimeInterval) {
-        self.init(mdlMesh: mdlMesh, mtkMesh:  mtkMesh)
-        
-        // set up the transform component with animation
-        if let mdlMeshTransform = mdlMesh.transform {
-            transform = TransformComponent(transform: mdlMeshTransform, object: mdlMesh, startTime: startTime, endTime: endTime)
-        } else {
-            transform = nil
-        }
-    }
+  return float4(color ,1);
 }
+
+fragment float4 fragment_debug_line(
+  constant float3 &color [[buffer(1)]])
+{
+  return float4(color ,1);
+}
+

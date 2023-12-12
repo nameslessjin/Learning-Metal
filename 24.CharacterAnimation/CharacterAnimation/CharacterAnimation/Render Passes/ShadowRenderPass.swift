@@ -1,15 +1,15 @@
 /// Copyright (c) 2022 Razeware LLC
-///
+/// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-///
+/// 
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-///
+/// 
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-///
+/// 
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -32,37 +32,52 @@
 
 import MetalKit
 
-// swiftlint:disable force_unwrapping
-// swiftlint:disable force_cast
+struct ShadowRenderPass: RenderPass {
+  let label: String = "Shadow Render Pass"
+  var descriptor: MTLRenderPassDescriptor?
+    = MTLRenderPassDescriptor()
+  var depthStencilState: MTLDepthStencilState?
+    = Self.buildDepthStencilState()
+  var pipelineState: MTLRenderPipelineState
+  var shadowTexture: MTLTexture?
 
-struct Mesh {
-  let vertexBuffers: [MTLBuffer]
-  let submeshes: [Submesh]
-    
-    var transform: TransformComponent?
-    
-}
-
-extension Mesh {
-  init(mdlMesh: MDLMesh, mtkMesh: MTKMesh) {
-    var vertexBuffers: [MTLBuffer] = []
-    for mtkMeshBuffer in mtkMesh.vertexBuffers {
-      vertexBuffers.append(mtkMeshBuffer.buffer)
-    }
-    self.vertexBuffers = vertexBuffers
-    submeshes = zip(mdlMesh.submeshes!, mtkMesh.submeshes).map { mesh in
-      Submesh(mdlSubmesh: mesh.0 as! MDLSubmesh, mtkSubmesh: mesh.1)
-    }
+  init(view: MTKView) {
+    pipelineState = PipelineStates.createShadowPSO()
+//    shadowTexture = Self.makeTexture(
+//      size: CGSize(
+//        width: 4096,
+//        height: 4096),
+//      pixelFormat: .depth32Float,
+//      label: "Shadow Depth Texture")
   }
-    
-    init(mdlMesh: MDLMesh, mtkMesh: MTKMesh, startTime: TimeInterval, endTime: TimeInterval) {
-        self.init(mdlMesh: mdlMesh, mtkMesh:  mtkMesh)
-        
-        // set up the transform component with animation
-        if let mdlMeshTransform = mdlMesh.transform {
-            transform = TransformComponent(transform: mdlMeshTransform, object: mdlMesh, startTime: startTime, endTime: endTime)
-        } else {
-            transform = nil
-        }
+
+  mutating func resize(view: MTKView, size: CGSize) {
+  }
+
+  func draw(
+    commandBuffer: MTLCommandBuffer,
+    scene: GameScene,
+    uniforms: Uniforms,
+    params: Params
+  ) {
+    guard let descriptor = descriptor else { return }
+    descriptor.depthAttachment.texture = shadowTexture
+    descriptor.depthAttachment.loadAction = .clear
+    descriptor.depthAttachment.storeAction = .store
+
+    guard let renderEncoder =
+      commandBuffer.makeRenderCommandEncoder(descriptor: descriptor) else {
+      return
     }
+    renderEncoder.label = "Shadow Encoder"
+    renderEncoder.setDepthStencilState(depthStencilState)
+    renderEncoder.setRenderPipelineState(pipelineState)
+    for model in scene.models {
+      model.render(
+        encoder: renderEncoder,
+        uniforms: uniforms,
+        params: params)
+    }
+    renderEncoder.endEncoding()
+  }
 }

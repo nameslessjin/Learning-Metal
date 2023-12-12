@@ -32,37 +32,72 @@
 
 import MetalKit
 
-// swiftlint:disable force_unwrapping
-// swiftlint:disable force_cast
+struct ForwardRenderPass: RenderPass {
+  let label = "Forward Render Pass"
+  var descriptor: MTLRenderPassDescriptor?
 
-struct Mesh {
-  let vertexBuffers: [MTLBuffer]
-  let submeshes: [Submesh]
-    
-    var transform: TransformComponent?
-    
-}
+  var pipelineState: MTLRenderPipelineState
+  var transparentPSO: MTLRenderPipelineState
 
-extension Mesh {
-  init(mdlMesh: MDLMesh, mtkMesh: MTKMesh) {
-    var vertexBuffers: [MTLBuffer] = []
-    for mtkMeshBuffer in mtkMesh.vertexBuffers {
-      vertexBuffers.append(mtkMeshBuffer.buffer)
-    }
-    self.vertexBuffers = vertexBuffers
-    submeshes = zip(mdlMesh.submeshes!, mtkMesh.submeshes).map { mesh in
-      Submesh(mdlSubmesh: mesh.0 as! MDLSubmesh, mtkSubmesh: mesh.1)
-    }
+  let depthStencilState: MTLDepthStencilState?
+  weak var shadowTexture: MTLTexture?
+
+  init(view: MTKView) {
+    pipelineState = PipelineStates.createForwardPSO()
+    depthStencilState = Self.buildDepthStencilState()
+    transparentPSO = PipelineStates.createForwardTransparentPSO()
   }
-    
-    init(mdlMesh: MDLMesh, mtkMesh: MTKMesh, startTime: TimeInterval, endTime: TimeInterval) {
-        self.init(mdlMesh: mdlMesh, mtkMesh:  mtkMesh)
-        
-        // set up the transform component with animation
-        if let mdlMeshTransform = mdlMesh.transform {
-            transform = TransformComponent(transform: mdlMeshTransform, object: mdlMesh, startTime: startTime, endTime: endTime)
-        } else {
-            transform = nil
-        }
+
+  mutating func resize(view: MTKView, size: CGSize) {
+  }
+
+  func draw(
+    commandBuffer: MTLCommandBuffer,
+    scene: GameScene,
+    uniforms: Uniforms,
+    params: Params
+  ) {
+    guard let descriptor = descriptor,
+      let renderEncoder =
+      commandBuffer.makeRenderCommandEncoder(
+        descriptor: descriptor) else {
+      return
     }
+    renderEncoder.label = label
+    renderEncoder.setDepthStencilState(depthStencilState)
+    renderEncoder.setRenderPipelineState(pipelineState)
+
+    renderEncoder.setFragmentBuffer(
+      scene.lighting.lightsBuffer,
+      offset: 0,
+      index: LightBuffer.index)
+    renderEncoder.setFragmentTexture(shadowTexture, index: ShadowTexture.index)
+
+    var params = params
+    params.transparency = false
+    for model in scene.models {
+      model.render(
+        encoder: renderEncoder,
+        uniforms: uniforms,
+        params: params)
+    }
+
+    // transparent mesh
+    renderEncoder.pushDebugGroup("Transparency")
+    let models = scene.models.filter {
+      $0.hasTransparency
+    }
+    params.transparency = true
+    if params.alphaBlending {
+      renderEncoder.setRenderPipelineState(transparentPSO)
+    }
+    for model in models {
+      model.render(
+        encoder: renderEncoder,
+        uniforms: uniforms,
+        params: params)
+    }
+    renderEncoder.popDebugGroup()
+    renderEncoder.endEncoding()
+  }
 }
