@@ -63,6 +63,10 @@ extension GameController: MTKViewDelegate {
     let deltaTime = (currentTime - lastTime)
     lastTime = currentTime
     scene.update(deltaTime: Float(deltaTime))
+      
+      // default rotation
+      scene.camera.update(deltaX: 2, deltaY: 0)
+      
     renderer.draw(scene: scene, in: view)
   }
 }

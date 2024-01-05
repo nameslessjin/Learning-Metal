@@ -70,6 +70,13 @@ struct PlayerCamera: Camera {
     }
 
   }
+    
+    mutating func update(deltaX: Float, deltaY: Float) {
+        let sensitivity = Settings.mousePanSensitivity
+        rotation.x += deltaY * sensitivity
+        rotation.y += deltaX * sensitivity
+        rotation.x = max(-.pi / 2, min(rotation.x, .pi / 2))
+    }
 }
 
 extension PlayerCamera: Movement { }

@@ -71,10 +71,11 @@ fragment float4 fragment_water(
     depth = floorDistance - waterDistance;
     
     // Ripple effects
+    float time = timer * 1.5;
     float waveStrength = 0.1; // attenuator value of the waves
     // calculate ripples by distoring the texture coordinates with timer
-    float2 rippleX = float2(uv.x + timer, uv.y);
-    float2 rippleY = float2(-uv.x, uv.y) + timer;
+    float2 rippleX = float2(uv.x + time, uv.y);
+    float2 rippleY = float2(-uv.x, uv.y) + time;
     // only grab R and G because they are U and V coordinates that determine the horizontal plane
     // where the ripples will be
     float2 ripple =

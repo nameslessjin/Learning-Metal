@@ -78,6 +78,7 @@ struct MetalView: View {
             previousScroll = 1
           })
     }
+    .frame(minWidth: 640, minHeight: 360)
   }
 }
 
@@ -120,5 +121,6 @@ struct MetalView_Previews: PreviewProvider {
       MetalView(options: Options())
       Text("Metal View")
     }
+    .frame(width: 640, height: 360)
   }
 }

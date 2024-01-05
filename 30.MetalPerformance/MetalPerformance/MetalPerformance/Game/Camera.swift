@@ -37,6 +37,7 @@ protocol Camera: Transformable {
   var viewMatrix: float4x4 { get }
   mutating func update(size: CGSize)
   mutating func update(deltaTime: Float)
+    mutating func update(deltaX: Float, deltaY: Float)
 }
 
 struct FPCamera: Camera {
@@ -67,6 +68,13 @@ struct FPCamera: Camera {
     rotation += transform.rotation
     position += transform.position
   }
+    
+    mutating func update(deltaX: Float, deltaY: Float) {
+        let sensitivity = Settings.mousePanSensitivity
+        rotation.x += deltaY * sensitivity
+        rotation.y += deltaX * sensitivity
+        rotation.x = max(-.pi / 2, min(rotation.x, .pi / 2))
+    }
 }
 
 extension FPCamera: Movement { }
@@ -124,6 +132,13 @@ struct ArcballCamera: Camera {
     let rotatedVector = rotateMatrix * distanceVector
     position = target + rotatedVector.xyz
   }
+    
+    mutating func update(deltaX: Float, deltaY: Float) {
+        let sensitivity = Settings.mousePanSensitivity
+        rotation.x += deltaY * sensitivity
+        rotation.y += deltaX * sensitivity
+        rotation.x = max(-.pi / 2, min(rotation.x, .pi / 2))
+    }
 }
 
 struct OrthographicCamera: Camera, Movement {
@@ -160,4 +175,11 @@ struct OrthographicCamera: Camera, Movement {
     viewSize -= CGFloat(zoom)
     input.mouseScroll = .zero
   }
+    
+    mutating func update(deltaX: Float, deltaY: Float) {
+        let sensitivity = Settings.mousePanSensitivity
+        rotation.x += deltaY * sensitivity
+        rotation.y += deltaX * sensitivity
+        rotation.x = max(-.pi / 2, min(rotation.x, .pi / 2))
+    }
 }

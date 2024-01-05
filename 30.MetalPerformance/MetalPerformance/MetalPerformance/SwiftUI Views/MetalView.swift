@@ -116,4 +116,5 @@ struct MetalViewRepresentable: ViewRepresentable {
     MetalView(options: Options())
     Text("Metal View")
   }
+//  .frame(width: 640, height: 360)
 }

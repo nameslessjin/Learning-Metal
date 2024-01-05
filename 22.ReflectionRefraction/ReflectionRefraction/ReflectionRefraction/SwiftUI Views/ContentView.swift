@@ -46,6 +46,7 @@ struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     Group {
       ContentView()
+            .frame(width: 630, height: 360)
     }
   }
 }

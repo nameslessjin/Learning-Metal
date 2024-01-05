@@ -48,6 +48,7 @@ struct ContentView: View {
           options.renderChoice = RenderChoice(rawValue: checked) ?? .none
         }
     }
+    .frame(width: 650, height: 400)
     .padding()
   }
 }
